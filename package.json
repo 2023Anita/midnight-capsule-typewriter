@@ -1,0 +1,11 @@
+{
+  "name": "midnight-capsule-typewriter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "午夜打字机：可独立运行的原站前端复刻",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "check": "node --check app.js && node --check scripts/serve.mjs"
+  },
+  "engines": { "node": ">=18" }
+}

@@ -1,0 +1,64 @@
+{
+  "captured_on": "2026-10-10",
+  "source": "https://midnight-capsule-typewriter.zzzzzzzzz1.chatgpt.site/",
+  "note": "初版移除Cloudflare验证脚本；增强版按用户要求修改页面、Canvas和材质样式。original/保留初版页面、CSS和JS，仅规范子目录资源路径。图片与字体原样保留。",
+  "files": [
+    {
+      "file": "index.html",
+      "source": "https://midnight-capsule-typewriter.zzzzzzzzz1.chatgpt.site/",
+      "source_sha256": "10e5de4fbb01fe80f50de76c3f5a61e2e4fa0630a9ee4fe73ac9e5b303840502",
+      "local_sha256": "b0ee6fb62e9e88cc8c43859360b8420e099b423031c49c5ebbd8ee788311c86c",
+      "bytes": 3625,
+      "matches_source": false
+    },
+    {
+      "file": "style.css",
+      "source": "https://midnight-capsule-typewriter.zzzzzzzzz1.chatgpt.site/style.css",
+      "source_sha256": "5561119d8bf3175402555f1e6453534ef46bd786315d0079a5c85614ac675269",
+      "local_sha256": "5561119d8bf3175402555f1e6453534ef46bd786315d0079a5c85614ac675269",
+      "bytes": 7224,
+      "matches_source": true
+    },
+    {
+      "file": "app.js",
+      "source": "https://midnight-capsule-typewriter.zzzzzzzzz1.chatgpt.site/app.js",
+      "source_sha256": "baa7173549437903816088c2019c06eb781dd3048a04fc72c5210892b6e9aee3",
+      "local_sha256": "c9dd18fe61d805cbeb76df3f60ab76263d90985952a2572a236303c1661dd255",
+      "bytes": 17831,
+      "matches_source": false
+    },
+    {
+      "file": "typewriter.otf",
+      "source": "https://midnight-capsule-typewriter.zzzzzzzzz1.chatgpt.site/typewriter.otf",
+      "source_sha256": "4f225ca8e13acb16f733ce741693105e527d5f7a5443901b9ecc190fca4e149b",
+      "local_sha256": "4f225ca8e13acb16f733ce741693105e527d5f7a5443901b9ecc190fca4e149b",
+      "bytes": 77936,
+      "matches_source": true
+    },
+    {
+      "file": "carriage.png",
+      "source": "https://midnight-capsule-typewriter.zzzzzzzzz1.chatgpt.site/carriage.png",
+      "source_sha256": "6afa565cc4bff129c1a27ddbe9ea353a578b3afb79eb5c48a210ef4e1c662a33",
+      "local_sha256": "6afa565cc4bff129c1a27ddbe9ea353a578b3afb79eb5c48a210ef4e1c662a33",
+      "bytes": 1866367,
+      "matches_source": true
+    },
+    {
+      "file": "rail.png",
+      "source": "https://midnight-capsule-typewriter.zzzzzzzzz1.chatgpt.site/rail.png",
+      "source_sha256": "afed69109268e32189065a31ab6c1d71be916370afba93ce55ec5fe2e51da8c2",
+      "local_sha256": "afed69109268e32189065a31ab6c1d71be916370afba93ce55ec5fe2e51da8c2",
+      "bytes": 2382,
+      "matches_source": true
+    },
+    {
+      "file": "paper-grain.png",
+      "source": "https://midnight-capsule-typewriter.zzzzzzzzz1.chatgpt.site/paper-grain.png",
+      "source_sha256": "74b3c874846ebc90e765128fca92dcd5025fcbaa5b78870f96623d013704b5f6",
+      "local_sha256": "74b3c874846ebc90e765128fca92dcd5025fcbaa5b78870f96623d013704b5f6",
+      "bytes": 3099,
+      "matches_source": true
+    }
+  ],
+  "variant": "refined-local"
+}

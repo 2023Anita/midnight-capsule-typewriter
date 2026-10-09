@@ -1,0 +1,164 @@
+/* 材质层独立于原版样式：暖纸、黄铜、深色金属。 */
+:root {
+  --bg: #181714;
+  --ink: #b7ad96;
+  --cream: #e4d7bb;
+  --brass: #c1a06b;
+  --key: #d8ceb7;
+  --key-active: #baaa88;
+  --keyboard: #262521;
+}
+body {
+  background: radial-gradient(ellipse at 49% 14%, #393124 0, #201d18 42%, #121310 100%);
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: .09;
+  background: url('paper-grain.png');
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+.machine { width: min(100%, 740px); max-height: 960px; padding: 0 16px 20px; }
+.machine::after {
+  inset: 128px 16px 20px;
+  border-radius: 26px;
+  box-shadow: 0 35px 70px #0008, 0 5px 12px #0005;
+}
+.topbar { height: 124px; padding: 16px 6px 18px; gap: 12px; }
+.brand { display: grid; gap: 7px; }
+.brand-eyebrow { font-size: 9px; letter-spacing: 3px; color: var(--brass); }
+.brand h1 { margin: 0; color: #e9dfca; font: 29px Georgia, 'Times New Roman', serif; letter-spacing: -.8px; }
+.brand-dot { color: var(--brass); }
+.brand-caption { color: #a69b85; font: 11px 'Songti SC', 'Noto Serif CJK SC', serif; letter-spacing: 2px; }
+.top-right { gap: 8px; font-size: 10px; letter-spacing: .5px; color: #b6a98c; }
+.top-right #count { margin-right: 12px; white-space: nowrap; }
+.topbar .icon { width: 36px; height: 36px; border: 1px solid #b9a07526; border-radius: 10px; background: #ffffff03; }
+.topbar .icon:hover { background: #b9a07515; border-color: #b9a07570; }
+.stage { border-radius: 24px 24px 0 0; min-height: 230px; background: #191917; }
+.paper-label { position: absolute; top: 16px; left: 26px; right: 26px; display: flex; justify-content: space-between; color: #9f9174; font-size: 9px; letter-spacing: 1.5px; z-index: 2; pointer-events: none; }
+.paper-label span { font-size: 8px; letter-spacing: 2px; opacity: .65; }
+.first-line { top: calc(65.5% - 142px); opacity: .75; color: #d2bd94; font-size: 12px; letter-spacing: .3px; padding: 9px 15px; border: 1px solid #d2bd9424; border-radius: 30px; background: #24231b20; transition: border-color .2s, background .2s; }
+.first-line span { margin-left: 12px; color: var(--brass); }
+.first-line:hover { background: #d2bd9410; border-color: #d2bd9460; }
+.hint { font: 11px 'Songti SC', serif; color: #c1b18f; opacity: .7; letter-spacing: 3px; bottom: 22px; }
+.controls {
+  position: relative;
+  height: 76px;
+  padding: 14px 26px 18px;
+  gap: 25px;
+  background: linear-gradient(#343127, #2b2922);
+  border-top: 1px solid #b8a27b22;
+  border-bottom: 1px solid #0009;
+  box-shadow: inset 0 1px 0 #ffffff05, 0 3px 5px #0003;
+  z-index: 2;
+}
+.controls label > span { color: #b6aa8e; font-size: 9px; letter-spacing: 1px; }
+.controls output { color: #d8c6a4; }
+.controls input { opacity: .85; }
+.controls input::-webkit-slider-thumb { background: linear-gradient(90deg, #806641, #d1b27c, #806641); border: 1px solid #e1cc9c; width: 7px; height: 16px; box-shadow: 0 1px 3px #0008; }
+.controls input::-moz-range-thumb { background: #b69865; border: 1px solid #e1cc9c; width: 5px; height: 14px; }
+.sun { color: #d5bd8e; width: 32px; font-size: 30px; }
+.keyboard {
+  padding: 0 18px max(18px, env(safe-area-inset-bottom));
+  border-radius: 0 0 24px 24px;
+  background: linear-gradient(115deg, #35332c, #24241f 58%, #303027);
+  border: 1px solid #b6a88520;
+  border-top: 0;
+  box-shadow: inset 0 1px 0 #ffffff07, inset 0 -6px 0 #11130f, inset 0 -7px 0 #93866d24;
+}
+.keyboard-top { height: 46px; padding: 0 3px; color: #b1a58c; font-size: 9px; }
+.keyboard-top button { font-size: 10px; }
+.keyboard-top #modeLabel { color: #d0b787; opacity: .8; font-size: 8px; letter-spacing: 2px; }
+.key-row { gap: 9px; margin-bottom: 11px; }
+.key {
+  height: 46px;
+  border-radius: 9px 9px 10px 10px;
+  border: 1px solid #f8ecd35c;
+  background: linear-gradient(155deg, #eee6d4, #d6ccb6 68%, #c1b69c);
+  color: #454336;
+  font: 23px Typewriter, 'Courier New', monospace;
+  text-shadow: 0 1px 0 #ffffff60;
+  box-shadow: 0 4px 0 #8b816d, 0 6px 0 #151611, 0 7px 8px #0005, inset 0 1px 0 #fff8, inset 0 -2px 3px #756a4d18;
+  transition: transform .09s, box-shadow .09s, background .12s;
+}
+.key:hover { background: linear-gradient(155deg, #faf1dd, #ded0ad); }
+.key.pressed, .key:active { background: linear-gradient(#c4b594, #e0d3b6); transform: translateY(3px); box-shadow: 0 1px 0 #8b816d, 0 3px 0 #151611, inset 0 2px 4px #6f593326; }
+.key.wide, .key.small { color: #d2c9b3; background: linear-gradient(145deg, #5a5a4d, #45463b); border-color: #c9c1a322; box-shadow: 0 4px 0 #30322a, 0 6px 0 #151611, 0 7px 8px #0005, inset 0 1px 0 #d5d0b31c; text-shadow: none; }
+.key.wide:hover, .key.small:hover { background: #646353; }
+.key.wide:active, .key.wide.pressed, .key.small:active { box-shadow: 0 1px 0 #30322a, 0 3px 0 #151611; }
+.key.shift.active { background: #b99d68; color: #24231d; }
+.key.space { color: #7c7053; background: linear-gradient(160deg, #e4d4ae, #c6b28a); border-color: #f2dfb67a; font-size: 9px; letter-spacing: 4px; }
+.key-pop { background: #ece2ca; color: #454336; border: 1px solid #fff5; box-shadow: 0 3px 18px #0005; }
+.key-pop::after { background: #ded2b6; }
+footer { padding: 0 4px; color: #a69b83; height: 28px; font-size: 10px; }
+footer .tiny-dot { background: #c4aa75; box-shadow: 0 0 5px #c4aa7540; }
+.keyboard-note { font-size: 9px; opacity: .7; }
+body.day .controls { background: linear-gradient(#d9cdb3, #c9bda4); border-top-color: #fff5; }
+body.day .controls label > span { color: #655d4b; }
+body.day .controls output { color: #4d4638; }
+body.day .sun { color: #514b3c; }
+body.day .first-line { color: #6c5c3e; background: #f3e9d050; border-color: #8a795326; }
+body.day .hint { color: #75664c; }
+dialog { background: linear-gradient(130deg, #373328, #26261f); border-color: #b49b6d66; border-radius: 16px; box-shadow: 0 30px 100px #000a, inset 0 1px 0 #fff1; }
+dialog button { background: #a18a5f; color: #1c1b16; }
+dialog button:first-child { color: #c8baa0; background: #ffffff08; }
+
+@media (min-width: 800px) and (min-height: 800px) {
+  .machine { height: min(94dvh, 960px); margin-top: 3dvh; }
+  .stage { min-height: 300px; }
+  .key { height: 50px; }
+}
+@media (max-width: 480px) {
+  .machine { padding: env(safe-area-inset-top) 10px max(10px, env(safe-area-inset-bottom)); min-height: 560px; }
+  .topbar { height: 112px; padding: 14px 5px 20px; }
+  .brand h1 { font-size: 23px; }
+  .brand-eyebrow { font-size: 8px; letter-spacing: 2px; }
+  .brand-caption { font-size: 10px; letter-spacing: 1px; }
+  .top-right { gap: 5px; }
+  .top-right #count { position: absolute; top: 93px; right: 20px; margin: 0; font-size: 9px; z-index: 3; }
+  .topbar .icon { width: 30px; height: 34px; }
+  .topbar svg { width: 17px; }
+  .paper-label { left: 18px; right: 18px; font-size: 8px; }
+  .paper-label span { display: none; }
+  .controls { height: 67px; gap: 15px; padding: 12px 16px 15px; }
+  .controls label > span { font-size: 8px; letter-spacing: .3px; }
+  .sun { width: 25px; font-size: 26px; }
+  .keyboard { padding: 0 10px 17px; border-radius: 0 0 20px 20px; }
+  .keyboard-top { height: 44px; gap: 6px; }
+  .keyboard-top button { font-size: 9px; }
+  .keyboard-top #modeLabel { letter-spacing: 1px; font-size: 7px; }
+  .key-row { gap: 6px; margin-bottom: 10px; }
+  .key { height: 42px; font-size: 21px; border-radius: 6px; }
+  .key.wide { font-size: 17px; }
+  .key.small { font-size: 13px; }
+  .key svg { width: 20px; }
+  .key.space { font-size: 8px; }
+  .first-line { top: calc(65.5% - 108px); font-size: 10px; padding: 7px 11px; }
+  .hint { bottom: 17px; font-size: 10px; letter-spacing: 2px; }
+  footer { font-size: 9px; height: 25px; }
+}
+@media (max-height: 740px) {
+  .topbar { height: 100px; padding-top: 12px; padding-bottom: 16px; }
+  .brand { gap: 5px; }
+  .brand h1 { font-size: 24px; }
+  .stage { min-height: 180px; }
+  .controls { height: 62px; padding-top: 10px; padding-bottom: 12px; }
+  .keyboard-top { height: 38px; }
+  .key { height: 37px; font-size: 20px; }
+  .key-row { margin-bottom: 9px; }
+  .keyboard { padding-bottom: 14px; }
+  footer { height: 23px; }
+}
+@media (max-width: 480px) and (max-height: 740px) {
+  .top-right #count { top: 85px; }
+  .brand h1 { font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
+@media (max-height: 650px) {
+  body { overflow-y: auto; }
+  .machine { height: 660px; min-height: 660px; }
+}
